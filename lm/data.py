@@ -54,7 +54,7 @@ def sp_train():
         f'--model_prefix={args.sp_model_prefix}',
         f'--vocab_size={args.vocab_size}',
         f'--model_type=bpe',
-        f'--max_sentence_length=16384',
+        f'--max_sentence_length=100000',
         f'--bos_id=-1',
         f'--eos_id=-1',
         f'--unk_piece={UNK}',
