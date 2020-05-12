@@ -116,12 +116,13 @@ def gen_main(model_path, prefix, tokens_to_generate=42, top_k=8):
 
     print("loading model from %s" % model_path)
     mw = ModelWrapper.load(Path(model_path))
+    while(True):
+        prefix = input('Prompt string: ')
+        print("generating text for prefix %s" % prefix)
+        tokens = mw.tokenize(prefix)
 
-    print("generating text for prefix %s" % prefix)
-    tokens = mw.tokenize(prefix)
-
-    tokens_gen = mw.generate_tokens(tokens, tokens_to_generate, top_k)
-    print(mw.sp_model.DecodePieces(tokens_gen))
+        tokens_gen = mw.generate_tokens(tokens, tokens_to_generate, top_k)
+        print(mw.sp_model.DecodePieces(tokens_gen))
 
 def fire_gen_main():
     fire.Fire(only_allow_defined_args(gen_main))
