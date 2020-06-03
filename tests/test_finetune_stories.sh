@@ -5,8 +5,8 @@
 set -ev
 
 sp-encode \
-    tests/stories/ \
-    trained_models/de345-root_fine/sp.model \
+    tests/stories-f/ \
+    tests/stories-f/sp.model \
     tests/stories-encoded-f
 
 #gpt-2 \
@@ -30,7 +30,7 @@ sp-encode \
 gpt-2 \
    tests/stories-test-run-f/ \
    tests/stories-encoded-f/ \
-   trained_models/de345-root_fine/sp.model \
+   tests/stories-f/sp-model.model \
    --batch-size 8 \
    --g-accum-gradients 1 \
    --n-ctx 1024 \

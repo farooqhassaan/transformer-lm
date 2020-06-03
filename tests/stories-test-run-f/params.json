@@ -1,0 +1,16 @@
+{
+    "argv": "/home/hassaan/anaconda2/envs/nlp/bin/gpt-2 tests/stories-test-run-f/ tests/stories-encoded-f/ tests/stories-f/sp-model.model --batch-size 8 --g-accum-gradients 1 --n-ctx 1024 --n-embed 1024 --n-hidden 1024 --n-head 16 --n-layer 24 --epochs 2",
+    "batch_size": 8,
+    "epochs": 2,
+    "g_accum_gradients": 1,
+    "hparams": {
+        "gradient_checkpointing": false,
+        "n_ctx": 1024,
+        "n_embed": 1024,
+        "n_head": 16,
+        "n_hidden": 1024,
+        "n_layer": 24,
+        "n_vocab": 50000
+    },
+    "lr": 0.00025
+}

@@ -8,7 +8,7 @@ sp-train \
     tests/stories/ \
     tests/stories/sp-text.txt \
     tests/stories/sp-model \
-    --vocab-size 5000
+    --vocab-size 50000
 
 sp-encode \
     tests/stories/ \
@@ -20,28 +20,28 @@ gpt-2 \
     tests/stories-encoded/ \
     tests/stories/sp-model.model \
     --batch-size 8 \
-    --g-accum-gradients 2 \
-    --n-ctx 48 \
-    --n-embed 64 \
-    --n-hidden 32 \
-    --n-head 4 \
-    --n-layer 3 \
-    --epochs 2 \
+    --g-accum-gradients 1 \
+    --n-ctx 1024 \
+    --n-embed 1024 \
+    --n-hidden 1024 \
+    --n-head 16 \
+    --n-layer 24 \
+    --epochs 50 \
     --log-every 2 \
     --save-every 50 \
     --validate-every 100 \
     --clean
 
 # resume training
-gpt-2 \
-    tests/stories-test-run/ \
-    tests/stories-encoded/ \
-    tests/stories/sp-model.model \
-    --batch-size 8 \
-    --g-accum-gradients 2 \
-    --n-ctx 48 \
-    --n-embed 64 \
-    --n-hidden 32 \
-    --n-head 4 \
-    --n-layer 3 \
-    --epochs 2
+# gpt-2 \
+#     tests/stories-test-run/ \
+#     tests/stories-encoded/ \
+#     tests/stories/sp-model.model \
+#     --batch-size 8 \
+#     --g-accum-gradients 1 \
+#     --n-ctx 1024 \
+#     --n-embed 1024 \
+#     --n-hidden 1024 \
+#     --n-head 16 \
+#     --n-layer 24 \
+#     --epochs 2
